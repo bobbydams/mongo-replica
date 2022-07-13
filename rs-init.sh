@@ -1,8 +1,12 @@
 #!/bin/bash
 
+REPLICA_SET_NAME=${1:-myReplica}
+
+echo "Initialising replica $REPLICA_SET_NAME"
+
 mongo --port 3000 <<EOF
 var config = {
-    "_id": "unitTest",
+    "_id": "$REPLICA_SET_NAME",
     "version": 1,
     "members": [
         {
