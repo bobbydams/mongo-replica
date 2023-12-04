@@ -11,9 +11,6 @@ services:
       - mongors-network
     ports:
       - 3000:3000
-    links:
-      - mongo-repl2
-      - mongo-repl3
     restart: always
     entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "${REPLICA_SET_NAME}", "--port", "3000" ]
   mongo-repl2:
