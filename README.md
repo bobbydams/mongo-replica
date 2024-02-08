@@ -4,7 +4,7 @@ MongoDb ReplicaSet using Docker Compose
 
 ## Prerequisites
 
-* Docker & docker-compose [Install](https://docs.docker.com/get-docker/)
+- Docker & docker-compose [Install](https://docs.docker.com/get-docker/)
 
 ## To start
 
@@ -23,7 +23,7 @@ $ docker-compose down
 Using any Mongo GUI client or mongosh, you can connect with the following connection string.
 
 ```
-mongodb://mongo-repl1:3000,mongo-repl2:3001,mongo-repl3:3002/myDatabase?connectTimeoutMS=300000&replicaSet=myReplica
+mongodb://mongo-repl1:3330,mongo-repl2:3301,mongo-repl3:3302/myDatabase?connectTimeoutMS=300000&replicaSet=myReplica
 ```
 
 ## To cleanup

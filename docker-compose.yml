@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mongo-repl1:
@@ -10,9 +10,17 @@ services:
     networks:
       - mongors-network
     ports:
-      - 3000:3000
+      - 3300:3300
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "${REPLICA_SET_NAME}", "--port", "3000" ]
+    entrypoint:
+      [
+        "/usr/bin/mongod",
+        "--bind_ip_all",
+        "--replSet",
+        "${REPLICA_SET_NAME}",
+        "--port",
+        "3300",
+      ]
   mongo-repl2:
     container_name: mongo-repl2
     image: mongo:latest
@@ -21,9 +29,17 @@ services:
     networks:
       - mongors-network
     ports:
-      - 3001:3001
+      - 3301:3301
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "${REPLICA_SET_NAME}", "--port", "3001" ]
+    entrypoint:
+      [
+        "/usr/bin/mongod",
+        "--bind_ip_all",
+        "--replSet",
+        "${REPLICA_SET_NAME}",
+        "--port",
+        "3301",
+      ]
   mongo-repl3:
     container_name: mongo-repl3
     image: mongo:latest
@@ -32,9 +48,17 @@ services:
     networks:
       - mongors-network
     ports:
-      - 3002:3002
+      - 3302:3302
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "${REPLICA_SET_NAME}", "--port", "3002" ]
+    entrypoint:
+      [
+        "/usr/bin/mongod",
+        "--bind_ip_all",
+        "--replSet",
+        "${REPLICA_SET_NAME}",
+        "--port",
+        "3302",
+      ]
 
 networks:
   mongors-network:
